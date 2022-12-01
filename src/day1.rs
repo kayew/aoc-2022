@@ -4,15 +4,11 @@ pub fn input_generator(input: &str) -> Vec<i32> {
     let mut max: Vec<i32> = vec![];
     
     for elf in data {
-        let current_elf: Vec<&str> = elf.split("\n").collect();
-        let mut sum = 0;
-        for cal in current_elf {
-            sum += cal.parse::<i32>().unwrap();
-        }
-        max.push(sum);
+        let current_elf: Vec<i32> = elf.split("\n").map(|cal| cal.parse().unwrap()).collect();
+        max.push(current_elf.iter().sum());
     }
 
-    max.sort();
+    max.sort_unstable();
 
     max
 }

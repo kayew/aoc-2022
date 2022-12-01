@@ -1,39 +1,29 @@
-#[aoc(day1, part1)]
-pub fn part1(input: &str) -> i32 {
+#[aoc_generator(day1)]
+pub fn input_generator(input: &str) -> Vec<i32> {
     let data: Vec<&str> = input.split("\n\n").collect();
-    let mut max = vec![];
-
-    // println!("{:?}", data);
+    let mut max: Vec<i32> = vec![];
     
     for elf in data {
         let current_elf: Vec<&str> = elf.split("\n").collect();
-        let mut total_elf_cal = 0;
+        let mut sum = 0;
         for cal in current_elf {
-            total_elf_cal += cal.parse::<i32>().unwrap();
+            sum += cal.parse::<i32>().unwrap();
         }
-        max.push(total_elf_cal);
+        max.push(sum);
     }
 
     max.sort();
 
-    return max[max.len()-1];
+    max
+}
+
+
+#[aoc(day1, part1)]
+pub fn part1(input: &Vec<i32>) -> i32 {
+    input[input.len() - 1]
 }
 
 #[aoc(day1, part2)]
-pub fn part2(input: &str) -> i32 {
-    let data: Vec<&str> = input.split("\n\n").collect();
-    let mut max = vec![];
-    
-    for elf in data {
-        let current_elf: Vec<&str> = elf.split("\n").collect();
-        let mut total_elf_cal = 0;
-        for cal in current_elf {
-            total_elf_cal += cal.parse::<i32>().unwrap();
-        }
-        max.push(total_elf_cal);
-    }
-
-    max.sort();
-
-    return max.iter().rev().take(3).sum();
+pub fn part2(input: &Vec<i32>) -> i32 {
+    input.iter().rev().take(3).sum()
 }

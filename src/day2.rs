@@ -24,20 +24,19 @@ pub fn part1(input: &Vec<[char; 2]>) -> i32 {
     for [opp, you] in input {
         match opp {
             'A' => match you {
-                    'Y' => total_score += PAPER + WIN,
-                    'Z' => total_score += SCISSORS + LOSE,
-                    _ => total_score += ROCK + DRAW, // x
+                'Y' => total_score += PAPER + WIN,
+                'Z' => total_score += SCISSORS + LOSE,
+                _ => total_score += ROCK + DRAW, // x
             },
             'B' => match you {
-                    'Z' => total_score += SCISSORS + WIN,
-                    'X' => total_score += ROCK + LOSE,
-                    _ => total_score += PAPER + DRAW, // y
+                'Z' => total_score += SCISSORS + WIN,
+                'X' => total_score += ROCK + LOSE,
+                _ => total_score += PAPER + DRAW, // y
             },
-            _ =>
-                match you {
-                    'X' => total_score += ROCK + WIN,
-                    'Y' => total_score += PAPER + LOSE,
-                    _ => total_score += SCISSORS + DRAW, // z
+            _ => match you {
+                'X' => total_score += ROCK + WIN,
+                'Y' => total_score += PAPER + LOSE,
+                _ => total_score += SCISSORS + DRAW, // z
             },
         }
     }
@@ -55,7 +54,7 @@ pub fn part2(input: &Vec<[char; 2]>) -> i32 {
                 'X' => total_score += SCISSORS + LOSE,
                 'Y' => total_score += ROCK + DRAW,
                 _ => total_score += PAPER + WIN,
-            }
+            },
             'B' => match you {
                 'X' => total_score += ROCK + LOSE,
                 'Y' => total_score += PAPER + DRAW,
@@ -65,11 +64,9 @@ pub fn part2(input: &Vec<[char; 2]>) -> i32 {
                 'X' => total_score += PAPER + LOSE,
                 'Y' => total_score += SCISSORS + DRAW,
                 _ => total_score += ROCK + WIN,
-            }
+            },
         }
     }
 
-
     return total_score;
 }
-

@@ -68,5 +68,5 @@ pub fn part2(input: &Vec<[char; 2]>) -> i32 {
         }
     }
 
-    return total_score;
+    total_score
 }

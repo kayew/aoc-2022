@@ -23,16 +23,16 @@ pub fn input_generator_d3p1(input: &str) -> Vec<[HashSet<char>; 2]> {
 
 #[aoc(day3, part1)]
 pub fn part1(input: &Vec<[HashSet<char>; 2]>) -> i32 {
-//     let mut total = 0;
+    //     let mut total = 0;
 
-//     for [left, right] in input {
-//         let intersect: Vec<char> = left.intersection(right).copied().collect();
-//         for c in intersect {
-//             total += determine_priority(c);
-//         }
-//     }
+    //     for [left, right] in input {
+    //         let intersect: Vec<char> = left.intersection(right).copied().collect();
+    //         for c in intersect {
+    //             total += determine_priority(c);
+    //         }
+    //     }
 
-//     total
+    //     total
 
     input
         .iter()

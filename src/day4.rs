@@ -32,3 +32,19 @@ pub fn part1(input: &Vec<[Elf; 2]>) -> usize {
 
     total
 }
+
+#[aoc(day4, part2)]
+pub fn part2(input: &Vec<[Elf; 2]>) -> usize {
+    let mut total = 0;
+
+
+    for [elf1, elf2] in input {
+        let case1 = (elf2.min <= elf1.max) && (elf1.max <= elf2.max);
+        let case2 = (elf1.min <= elf2.max) && (elf2.max <= elf1.max);
+        if case1 || case2 {
+            total += 1
+        }
+    }
+
+    total
+}

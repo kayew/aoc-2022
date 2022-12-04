@@ -8,17 +8,18 @@ pub fn input_generator(input: &str) -> Vec<[Elf; 2]> {
     let mut data: Vec<[Elf; 2]> = vec![];
 
     for line in input.lines() {
-        let ranges: Vec<&str> = line.split(",").collect();
-        let range1: Vec<usize> = ranges[0].split("-").map(|r| r.parse().unwrap()).collect();
-        let range2: Vec<usize> = ranges[1].split("-").map(|r| r.parse().unwrap()).collect();
+        let val_iter: Vec<usize> = line
+            .split(|x| x == ',' || x == '-')
+            .map(|x| x.parse().unwrap())
+            .collect();
         data.push([
             Elf {
-                min: range1[0],
-                max: range1[1],
+                min: val_iter[0],
+                max: val_iter[1],
             },
             Elf {
-                min: range2[0],
-                max: range2[1],
+                min: val_iter[2],
+                max: val_iter[3],
             },
         ]);
     }

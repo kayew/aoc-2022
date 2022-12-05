@@ -45,12 +45,11 @@ pub fn part1(input: &Vec<[Elf; 2]>) -> usize {
     input
         .iter()
         .filter(|[elf1, elf2]| {
-                let case1 = (elf1.min >= elf2.min) && (elf1.max <= elf2.max);
-                let case2 = (elf2.min >= elf1.min) && (elf2.max <= elf1.max);
-                case1 || case2
+            let case1 = (elf1.min >= elf2.min) && (elf1.max <= elf2.max);
+            let case2 = (elf2.min >= elf1.min) && (elf2.max <= elf1.max);
+            case1 || case2
         })
         .count()
-
 }
 
 #[aoc(day4, part2)]

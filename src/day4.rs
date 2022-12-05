@@ -29,18 +29,28 @@ pub fn input_generator(input: &str) -> Vec<[Elf; 2]> {
 
 #[aoc(day4, part1)]
 pub fn part1(input: &Vec<[Elf; 2]>) -> usize {
-    let mut total = 0;
+    // let mut total = 0;
 
-    for [elf1, elf2] in input {
-        let case1 = (elf1.min >= elf2.min) && (elf1.max <= elf2.max);
-        let case2 = (elf2.min >= elf1.min) && (elf2.max <= elf1.max);
+    // for [elf1, elf2] in input {
+    //     let case1 = (elf1.min >= elf2.min) && (elf1.max <= elf2.max);
+    //     let case2 = (elf2.min >= elf1.min) && (elf2.max <= elf1.max);
 
-        if case1 || case2 {
-            total += 1;
-        }
-    }
+    //     if case1 || case2 {
+    //         total += 1;
+    //     }
+    // }
 
-    total
+    // total
+
+    input
+        .iter()
+        .filter(|[elf1, elf2]| {
+                let case1 = (elf1.min >= elf2.min) && (elf1.max <= elf2.max);
+                let case2 = (elf2.min >= elf1.min) && (elf2.max <= elf1.max);
+                case1 || case2
+        })
+        .count()
+
 }
 
 #[aoc(day4, part2)]

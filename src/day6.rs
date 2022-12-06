@@ -13,8 +13,8 @@ fn push_to_set(arr: &[char]) -> bool {
 #[aoc(day6, part1)]
 pub fn part1(input: &Vec<char>) -> usize {
     for i in 0..input.len() {
-        if push_to_set(&input[i..(i+4)]) {
-            return i + 4
+        if push_to_set(&input[i..(i + 4)]) {
+            return i + 4;
         }
     }
 
@@ -24,8 +24,8 @@ pub fn part1(input: &Vec<char>) -> usize {
 #[aoc(day6, part2)]
 pub fn part2(input: &Vec<char>) -> usize {
     for i in 0..input.len() {
-        if push_to_set(&input[i..(i+14)]) {
-            return i + 14
+        if push_to_set(&input[i..(i + 14)]) {
+            return i + 14;
         }
     }
 

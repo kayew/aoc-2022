@@ -35,7 +35,7 @@ pub fn input_generator(input: &str) -> CrateMover {
         .collect();
 
     CrateMover {
-        crates: crates,
+        crates,
         instructions: inst,
     }
 }

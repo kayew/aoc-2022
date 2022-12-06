@@ -22,7 +22,7 @@ pub fn input_generator_d3p1(input: &str) -> Vec<[HashSet<char>; 2]> {
 }
 
 #[aoc(day3, part1)]
-pub fn part1(input: &Vec<[HashSet<char>; 2]>) -> i32 {
+pub fn part1(input: &[[HashSet<char>; 2]]) -> i32 {
     //     let mut total = 0;
 
     //     for [left, right] in input {
@@ -52,7 +52,7 @@ pub fn input_generator_d3p2(input: &str) -> Vec<HashSet<char>> {
 }
 
 #[aoc(day3, part2)]
-pub fn part2(input: &Vec<HashSet<char>>) -> i32 {
+pub fn part2(input: &[HashSet<char>]) -> i32 {
     // let mut total = 0;
 
     // for elfs in input.chunks(3) {

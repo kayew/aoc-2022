@@ -28,7 +28,7 @@ pub fn input_generator(input: &str) -> Vec<[Elf; 2]> {
 }
 
 #[aoc(day4, part1)]
-pub fn part1(input: &Vec<[Elf; 2]>) -> usize {
+pub fn part1(input: &[[Elf; 2]]) -> usize {
     // let mut total = 0;
 
     // for [elf1, elf2] in input {
@@ -53,7 +53,7 @@ pub fn part1(input: &Vec<[Elf; 2]>) -> usize {
 }
 
 #[aoc(day4, part2)]
-pub fn part2(input: &Vec<[Elf; 2]>) -> usize {
+pub fn part2(input: &[[Elf; 2]]) -> usize {
     let mut total = 0;
 
     for [elf1, elf2] in input {

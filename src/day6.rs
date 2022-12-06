@@ -1,12 +1,10 @@
-use std::collections::HashSet;
-
 #[aoc_generator(day6)]
 pub fn input_generator(input: &str) -> Vec<char> {
     input.chars().collect()
 }
 
 fn push_to_set(arr: &[char]) -> bool {
-    let mut hs = HashSet::new();
+    let mut hs = std::collections::HashSet::new();
     arr.iter().all(move |x| hs.insert(x))
 }
 
